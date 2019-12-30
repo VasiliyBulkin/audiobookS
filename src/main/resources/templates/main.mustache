@@ -1,7 +1,26 @@
 <html>
 <body>
+
 <div>
-    {{some}}
+        <form method="post" action="main">
+            <input type="text" name="name" placeholder="Input name of author"/>
+            <button type="submit">Add author name</button>
+        </form>
 </div>
+
+<div>List of authors</div>
+
+        <form method="post" action="filter">
+            <input type="text" name="filter"/>
+            <button type="submit">Search</button>
+        </form>
+
+    {{#authors}}
+        <div>
+        <b>{{id}}</b>
+        <span>{{name}}</span>
+        </div>
+    {{/authors}}
+
 </body>
 </html>
