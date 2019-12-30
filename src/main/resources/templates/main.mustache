@@ -2,9 +2,16 @@
 <body>
 
 <div>
+    <form action="/logout" method="post">
+        <input type="submit" value="Sign Out"/>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+    </form>
+</div>
+<div>
         <form method="post" action="main">
             <input type="text" name="name" placeholder="Input name of author"/>
             <button type="submit">Add author name</button>
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
         </form>
 </div>
 
@@ -13,6 +20,7 @@
         <form method="post" action="filter">
             <input type="text" name="filter"/>
             <button type="submit">Search</button>
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
         </form>
 
     {{#authors}}
