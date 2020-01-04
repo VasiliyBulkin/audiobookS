@@ -6,6 +6,7 @@ import org.example.audiobookS.repos.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,9 +25,15 @@ public class MainController {//controller fo greeting
     }
 
     @GetMapping("/main")
-    public String main(Map<String ,Object> model){
+    public String main(@RequestParam(required = false, defaultValue = "") String filter, Model model){
         Iterable<Book> books = bookRepo.findAll();
-        model.put("books", books);
+        if (filter !=null && !filter.isEmpty()){
+            books = bookRepo.findByNameContaining(filter);
+        } else {
+            books = bookRepo.findAll();
+        }
+        model.addAttribute("books", books);
+        model.addAttribute("filter", filter);
         return "main";
     }
 
@@ -39,18 +46,6 @@ public class MainController {//controller fo greeting
       Iterable<Book> books = bookRepo.findAll();
       model.put("books", books);
       return "main";
-    }
-
-    @PostMapping("filter")
-    public String filter(@RequestParam String filter, Map<String, Object> model) {
-        Iterable<Book> books;
-        if (filter !=null && !filter.isEmpty()){
-            books = bookRepo.findByNameContaining(filter);
-        } else {
-            books = bookRepo.findAll();
-        }
-       model.put("books", books);
-        return "main";
     }
 
 }
