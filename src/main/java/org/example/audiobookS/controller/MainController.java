@@ -43,13 +43,13 @@ public class MainController {//controller fo greeting
 
     @PostMapping("filter")
     public String filter(@RequestParam String filter, Map<String, Object> model) {
-        Iterable<Book> authors;
+        Iterable<Book> books;
         if (filter !=null && !filter.isEmpty()){
-            authors = bookRepo.findByNameContaining(filter);
+            books = bookRepo.findByNameContaining(filter);
         } else {
-            authors = bookRepo.findAll();
+            books = bookRepo.findAll();
         }
-       model.put("authors", authors);
+       model.put("books", books);
         return "main";
     }
 

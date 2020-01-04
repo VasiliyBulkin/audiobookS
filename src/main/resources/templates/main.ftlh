@@ -23,8 +23,8 @@
 <#list books as book>
 
         <div>
-        <b>${book.id}</b>
-        <span>${book.name}</span>
+        <b>${book.id!""}</b>
+        <span>${book.name!""}</span>
             <strong>${book.ownerName!""}</strong>
         </div>
 <#else>
