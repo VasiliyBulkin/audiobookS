@@ -14,6 +14,16 @@ public class Book {
     @JoinColumn(name = "user_id")
     private User owner;
 
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    private String filename;
+
 
   public  String getOwnerName(){
       return owner !=null ? owner.getUsername(): "<none>";
