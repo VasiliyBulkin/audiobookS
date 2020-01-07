@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Book {
     @Id //This is the identification field
     @GeneratedValue(strategy = GenerationType.AUTO)//This is field generated automatically
-    private Integer id;
+    private Long id;
     private String name; //first name and last name of author with space
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -45,7 +45,7 @@ public class Book {
         this.name = name;
     }
 
-    public Book(Integer id, String name) {
+    public Book(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -55,11 +55,11 @@ public class Book {
         this.owner = owner;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -70,4 +70,6 @@ public class Book {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }

@@ -15,9 +15,16 @@
         </form>
 </div>
 
+
+<div>Book by id</div>
+        <form method="get" action="/main">
+            <input type="text" name="id" placeholder="Input the integer" value="${id!""}"/>
+            <button type="submit">Search</button>
+        </form>
+
 <div>List of books</div>
         <form method="get" action="/main">
-            <input type="text" name="filter" value="${filter!""}"/>
+            <input type="text" name="filter" placeholder="Input the search pattern"  value="${filter!""}"/>
             <button type="submit">Search</button>
         </form>
 <#list books as book>
