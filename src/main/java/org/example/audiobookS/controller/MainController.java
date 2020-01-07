@@ -1,7 +1,9 @@
 package org.example.audiobookS.controller;
 
+import org.example.audiobookS.domain.Author;
 import org.example.audiobookS.domain.Book;
 import org.example.audiobookS.domain.User;
+import org.example.audiobookS.repos.AuthorRepo;
 import org.example.audiobookS.repos.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,11 +29,15 @@ public class MainController {//controller fo greeting
     @Autowired//this is annotation for injection dependencies in field
     private BookRepo bookRepo;
 
+    @Autowired
+    private AuthorRepo authorRepo;
+
     @Value("${upload.path}")// @Value позволяет внедрять простые значения таких типов, как int, boolean и String.
     private String uploadPath;
 
 
-    @GetMapping("/")//The @GetMapping annotation ensures that HTTP GET requests to /greeting are mapped to the greeting() method.
+    @GetMapping("/")
+//The @GetMapping annotation ensures that HTTP GET requests to /greeting are mapped to the greeting() method.
     public String greeting(Map<String, Object> model) {
         return "greeting";//return this VIEW file name from folder templates
     }
@@ -47,16 +53,14 @@ public class MainController {//controller fo greeting
             @RequestParam(required = false, defaultValue = "") String filter,
             @RequestParam(required = false, defaultValue = "") String id,
             Model model
-    ){
+    ) {
         Iterable<Book> books;                   //At Model we put values and send to view
-        if (filter !=null && !filter.isEmpty()){
+        if (filter != null && !filter.isEmpty()) {
             books = bookRepo.findByNameContaining(filter);//do request
-        }
-        else if (id !=null && !id.isEmpty()){
+        } else if (id != null && !id.isEmpty()) {
 
             books = bookRepo.findAllById(Collections.singleton(Long.parseLong(id)));//do request
-        }
-        else {
+        } else {
             books = bookRepo.findAll();//do show all list of books
         }
 
@@ -66,42 +70,33 @@ public class MainController {//controller fo greeting
     }
 
     @PostMapping("/main")
-    public  String add (
-            @AuthenticationPrincipal User owner,
+    public String add(
+            @AuthenticationPrincipal User owner,//???
             @RequestParam String name, Map<String, Object> model,
             @RequestParam("file") MultipartFile file
     ) throws IOException {
-      Book book =  new Book(name,owner);
+        Book book = new Book(name, owner);
 
-      if (file != null && !file.getOriginalFilename().isEmpty()){//проверяем есть ли файл не равный null
-          File uploadDir = new File(uploadPath);
+        if (file != null && !file.getOriginalFilename().isEmpty()) {//проверяем есть ли файл не равный null
+            File uploadDir = new File(uploadPath);
 
-                if(!uploadDir.exists()){//если директория не существует - создаем ее
-                    uploadDir.mkdir();
-                }
-          String uuidFile = UUID.randomUUID().toString();
-          String resultFilename = uuidFile + "." + file.getOriginalFilename();
-
-         file.transferTo(new File(uploadPath + "/" + resultFilename));
-
-
-          book.setFilename(resultFilename);
-      }
-
-      bookRepo.save(book);
-      System.out.println("bookRepo =--------------------------------------------- " + bookRepo.count());
-       // Optional<Book> books1 = bookRepo.findById(57L);
-        Iterable<Long> iterableLong = Collections.singleton(15l);
-        Iterable<Book> books1 = bookRepo.findAllById(iterableLong);
-
-      System.out.println("bookbyID =--------------------------------------------- " + books1);
-
-
-      Iterable<Book> books = bookRepo.findAll();
-      model.put("books", books);
-
-      model.put("books1", books1);
-      return "main";
+            if (!uploadDir.exists()) {//если директория не существует - создаем ее
+                uploadDir.mkdir();
+            }
+            String uuidFile = UUID.randomUUID().toString();
+            String resultFilename = uuidFile + "." + file.getOriginalFilename();
+            file.transferTo(new File(uploadPath + "/" + resultFilename));
+            book.setFilename(resultFilename);
+        }
+        bookRepo.save(book);
+        Iterable<Book> books = bookRepo.findAll();
+        model.put("books", books);
+        return "main";
     }
-
 }
+
+// System.out.println("bookRepo =--------------------------------------------- " + bookRepo.count());
+// Optional<Book> books1 = bookRepo.findById(57L);
+//  Iterable<Long> iterableLong = Collections.singleton(15l);
+//  Iterable<Book> books1 = bookRepo.findAllById(iterableLong);
+//System.out.println("bookbyID =--------------------------------------------- " + books1);

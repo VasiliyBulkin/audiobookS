@@ -1,3 +1,20 @@
 body {
     color: #483D8B;
 }
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+th {
+  text-align: left;
+}
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+td, th {
+  width: 2%;
+}

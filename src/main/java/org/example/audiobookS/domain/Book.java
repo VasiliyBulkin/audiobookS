@@ -14,29 +14,11 @@ public class Book {
     @JoinColumn(name = "user_id")
     private User owner;
 
-    public String getFilename() {
-        return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "author_id")
+    private Author author;
 
     private String filename;
-
-
-  public  String getOwnerName(){
-      return owner !=null ? owner.getUsername(): "<none>";
-    }
-
-
-    public User getOwner() {
-        return owner;
-    }
-
-    public void setOwner(User owner) {
-        this.owner = owner;
-    }
 
     public Book() {
     }
@@ -55,6 +37,36 @@ public class Book {
         this.owner = owner;
     }
 
+    public Book(String name, User owner, Author author) {
+        this.name = name;
+        this.owner = owner;
+        this.author = author;
+    }
+
+
+    //-----------------------------------------------------------------------------------------------
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    //-----------------------------------------------------------------------------------------------
+    public  String getOwnerName(){
+      return owner !=null ? owner.getUsername(): "<none>";
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
+    //-----------------------------------------------------------------------------------------------
     public Long getId() {
         return id;
     }
@@ -63,6 +75,8 @@ public class Book {
         this.id = id;
     }
 
+    //-----------------------------------------------------------------------------------------------
+
     public String getName() {
         return name;
     }
@@ -70,6 +84,17 @@ public class Book {
     public void setName(String name) {
         this.name = name;
     }
+    //-----------------------------------------------------------------------------------------------
+    public Author getAuthor() {
+        return author;
+    }
 
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public  String getAuthorName(){
+        return author !=null ? author.getAuthorname(): "<none>";
+    }
 
 }

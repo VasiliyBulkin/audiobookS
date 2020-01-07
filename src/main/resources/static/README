@@ -31,9 +31,9 @@ Create the application.properties File --> spring.datasource.url=jdbc:mysql://${
                                   spring.jpa.generate-ddl=true
                                   spring.jpa.hibernate.ddl-auto=update
 
-Create class entity         --> @Entity - обозначает сущность для hibernate | folder  -  domain |
+Create class entity         --> @Entity - обозначает сущность для hibernate | folder  -  domain |class SomeName
 
-Create repository            -->  folder - repos |
+Create repository            -->  folder - repos | interface SomeNameRepo extends CrudRepository<T, val>
 
 Create controller             -->
 
