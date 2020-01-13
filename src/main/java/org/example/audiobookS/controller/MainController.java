@@ -2,9 +2,11 @@ package org.example.audiobookS.controller;
 
 import org.example.audiobookS.domain.Author;
 import org.example.audiobookS.domain.Book;
+import org.example.audiobookS.domain.Role;
 import org.example.audiobookS.domain.User;
 import org.example.audiobookS.repos.AuthorRepo;
 import org.example.audiobookS.repos.BookRepo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -19,10 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Controller//this id annotation for controller
 public class MainController {//controller fo greeting
@@ -47,29 +46,57 @@ public class MainController {//controller fo greeting
         return "genericErrorView";
     }
 
+    @ExceptionHandler(NoSuchElementException.class)
+    public String genericNoSuchElementException() {
+        return "genericNoSuchElementException";
+    }
+
 
     @GetMapping("/main")
     public String main(
+            @AuthenticationPrincipal User owner,
+            @RequestParam(required = false, defaultValue = "") String filterAuthorName,
+            @RequestParam(required = false, defaultValue = "") String filterAuthorId,
             @RequestParam(required = false, defaultValue = "") String filter,
             @RequestParam(required = false, defaultValue = "") String id,
             Model model
     ) {
-        Iterable<Book> books;                   //At Model we put values and send to view
+        Iterable<Book> books;
         if (filter != null && !filter.isEmpty()) {
-            books = bookRepo.findByNameContaining(filter);//do request
+            books = bookRepo.findByNameContaining(filter);
         } else if (id != null && !id.isEmpty()) {
-
-            books = bookRepo.findAllById(Collections.singleton(Long.parseLong(id)));//do request
-        } else {
-            books = bookRepo.findAll();//do show all list of books
+            books = bookRepo.findAllById(Collections.singleton(Long.parseLong(id)));
+        } else if (filterAuthorId != null && !filterAuthorId.isEmpty()) {
+            Optional<Author> authorById = authorRepo.findById(Long.parseLong(filterAuthorId));
+            books = bookRepo.findByAuthorLike(authorById.get());
+        } else if (filterAuthorName != null && !filterAuthorName.isEmpty()) {
+            Author authors = authorRepo.findByAuthorname(filterAuthorName);
+            if(authors != null ){
+                books = bookRepo.findByAuthorLike(authors);
+            }else {
+                books = bookRepo.findAll();
+            }
+        }
+        else {
+            books = bookRepo.findAll();
         }
 
-        model.addAttribute("books", books);//put value in the Model
-        model.addAttribute("filter", filter);//put value in the  Model
+
+        model.addAttribute("id", id);
+        model.addAttribute("books", books);
+        model.addAttribute("filter", filter);
+        model.addAttribute("filterAuthorId", filterAuthorId);
+        model.addAttribute("filterAuthorName", filterAuthorName);
+        Set <Role> roles = owner.getRoles();
+        if(roles.contains(Role.ADMIN)){
+          model.addAttribute("showLink", "showLink");
+        }
+
         return "main";//return this VIEW file name from folder templates
     }
 
-    @PostMapping("/main")
+
+  /*  @PostMapping("/main")
     public String add(
             @AuthenticationPrincipal User owner,//???
             @RequestParam String name, Map<String, Object> model,
@@ -92,11 +119,5 @@ public class MainController {//controller fo greeting
         Iterable<Book> books = bookRepo.findAll();
         model.put("books", books);
         return "main";
-    }
+    }*/
 }
-
-// System.out.println("bookRepo =--------------------------------------------- " + bookRepo.count());
-// Optional<Book> books1 = bookRepo.findById(57L);
-//  Iterable<Long> iterableLong = Collections.singleton(15l);
-//  Iterable<Book> books1 = bookRepo.findAllById(iterableLong);
-//System.out.println("bookbyID =--------------------------------------------- " + books1);

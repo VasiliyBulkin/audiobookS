@@ -1,9 +1,11 @@
 package org.example.audiobookS.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.Set;
 
 @Entity
 public class Author {
@@ -11,10 +13,29 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+
+    @NotNull
+    @Size(
+            min = 2,
+            max = 255,
+            message = "Name is required, minimum 2,  maximum 255 characters."
+    )
     private String authorname;
+
+    @OneToMany(mappedBy = "author")
+    private Set<Book> books;
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
+    }
 
     public Author() {
     }
+
 
     public Author(String authorname) {
         this.authorname = authorname;

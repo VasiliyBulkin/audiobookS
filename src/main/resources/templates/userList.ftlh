@@ -1,6 +1,8 @@
 <#import "parts/common.ftlh" as c>
 
 <@c.page>
+<p><span><a href="/main">Main page</a></span></p>
+<p><span><a href="/author">Storage management</a></span></p>
 <table>
     <caption>List of User</caption>
 
@@ -8,7 +10,7 @@
         <tr>
             <th>Name</th>
             <th>Role</th>
-            <th></th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>

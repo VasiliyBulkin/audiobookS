@@ -4,10 +4,13 @@
 <@c.page>
 <div>
     <@l.logout />
-    <p><span><a href="/user">User list</a> </span></p>
-    <p><span><a href="/author">Author list</a> </span></p>
+
+    <#if showLink??>
+        <p><span><a href="/author">Storage management</a></span></p>
+    </#if>
+    <p><span><a href="/search">Advanced Search</a></span></p>
 </div>
-<div>
+<!--<div>
     <fieldset>
         <legend><strong>Add new book</strong></legend>
         <form method="post" action="main" enctype="multipart/form-data">
@@ -21,28 +24,33 @@
             <button type="submit">Add book name</button>
         </form>
     </fieldset>
-</div>
+</div>-->
 
 <fieldset>
     <legend><strong>Book Search</strong></legend>
+
         <form method="get" action="/main">
-            <label for="bookid">Book by id</label>
-             <p><input type="text" name="id" id="bookid" placeholder="Input the integer number" value="${id!""}"/></p>
-            <button type="submit">Search</button>
+            <p>
+                <label for="filter">Book by pattern</label>
+                <input type="text" name="filter" id="filter" placeholder="Input the search pattern"  value="${filter!''}"/>
+                <button type="submit">Search</button>
+            </p>
         </form>
 
         <form method="get" action="/main">
-            <label for="filter">Book by pattern</label>
-            <p><input type="text" name="filter" id="filter" placeholder="Input the search pattern"  value="${filter!""}"/></p>
-            <button type="submit">Search</button>
+            <p>
+                <label for="filterAuthorName">Book by author name</label>
+                <input type="text" name="filterAuthorName" id="filterAuthorName" placeholder="Input the author name"  value="${filterAuthorName!''}"/>
+                <button type="submit">Search</button>
+            </p>
         </form>
+
 </fieldset>
 
         <div>
             <table>
                 <caption>List of books</caption>
                 <tr>
-                    <th>Book id</th>
                     <th>Book name</th>
                     <th>Book owner</th>
                     <th>Book author</th>
@@ -52,13 +60,12 @@
 <#list books as book>
             <table >
                 <tr>
-                    <td>${book.id!""}</td>
                     <td>${book.name!""}</td>
                     <td>${book.ownerName!""}</td>
                     <td>${book.authorName!""}</td>
                     <td>
                         <#if book.filename??> <!-- проверка на наличее поля filename, ??приведение к булеву типу -->
-                        <img src="/img/${book.filename}">
+                        <img  alt="There could be an image" style="width:200px;height:200px;" src="/img/${book.filename} ">
                     </#if>
                     </td>
                 </tr>

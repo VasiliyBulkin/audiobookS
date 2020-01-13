@@ -1,12 +1,13 @@
 <#import "parts/common.ftlh" as c>
 
 <@c.page>
-
+<p><span><a href="/main">Main page</a></span></p>
+<p><span><a href="/author">Storage management</a></span></p>
 <table>
     <caption>Add a book to this author</caption>
     <thead>
     <tr>
-        <th>Book id</th>
+        <th>Author id</th>
         <th> Author name</th>
         <th> Book name</th>
     </tr>
@@ -31,7 +32,7 @@
                     <label for="filecover">Chose the cover</label>
                     <p><input type="file"  id="filecover" name="file"></p>
 
-                    <input type="hidden" value="${author.id}" name="authorid">
+                    <input type="hidden" value="${author.id}" name="authorId">
                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                     <button type="submit">Add book name</button>
                 </form>

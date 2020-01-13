@@ -2,12 +2,21 @@ package org.example.audiobookS.domain;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity //This tells Hibernate to make a table out of this class
 public class Book {
     @Id //This is the identification field
     @GeneratedValue(strategy = GenerationType.AUTO)//This is field generated automatically
     private Long id;
+
+    @NotNull
+    @Size(
+            min = 1,
+            max = 255,
+            message = "Name is required, maximum 255 characters."
+    )
     private String name; //first name and last name of author with space
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -15,8 +24,9 @@ public class Book {
     private User owner;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "author_id", nullable = false)
     private Author author;
+
 
     private String filename;
 
@@ -94,7 +104,12 @@ public class Book {
     }
 
     public  String getAuthorName(){
-        return author !=null ? author.getAuthorname(): "<none>";
+       return author !=null ? author.getAuthorname(): "<none>";
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Book [id=%s, name=%s, owner=%s, author=%s]", id, name, owner, author);
     }
 
 }

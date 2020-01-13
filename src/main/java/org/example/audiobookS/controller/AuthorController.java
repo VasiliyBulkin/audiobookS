@@ -9,17 +9,20 @@ import org.example.audiobookS.repos.AuthorRepo;
 import org.example.audiobookS.repos.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.ConstraintViolationException;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
 @Controller
+@PreAuthorize("hasAuthority('ADMIN')")
 @RequestMapping("/author")
 public class AuthorController {
     @Autowired
@@ -29,12 +32,33 @@ public class AuthorController {
     private BookRepo bookRepo;
 
     @GetMapping
-    public String authorList(Model model){
-        model.addAttribute("authors",authorRepo.findAll());
+    public String authorList(
+            @RequestParam(required = false, defaultValue = "") String filterAuthorName,
+            @RequestParam(required = false) String orderByAuthorName,
+            Model model){
+        List<Author> authors;
+        String reOrderByAuthorName;
+       if (orderByAuthorName != null && !orderByAuthorName.isEmpty()){
+           if (orderByAuthorName.equals("checked")){
+               authors = authorRepo.findByAuthornameContainingOrderByAuthorname(filterAuthorName);
+               reOrderByAuthorName = "unchecked";
+           } else {
+               authors = authorRepo.findByAuthornameContainingOrderByAuthornameDesc(filterAuthorName);
+               reOrderByAuthorName = "checked";
+           }
+       }
+       else {
+           authors = authorRepo.findByAuthornameContaining(filterAuthorName);
+           reOrderByAuthorName = "unchecked";
+       }
+        model.addAttribute("authors",authors);
+        model.addAttribute("filterAuthorName", filterAuthorName);
+        model.addAttribute("orderByAuthorName", orderByAuthorName);
+        model.addAttribute("reOrderByAuthorName", reOrderByAuthorName);
         return "authorList";
     }
 
-    @Value("${upload.path}")// @Value позволяет внедрять простые значения таких типов, как int, boolean и String.
+    @Value("${upload.path}")
     private String uploadPath;
 
     @GetMapping("{authorid}")
@@ -48,23 +72,16 @@ public class AuthorController {
 
     @PostMapping("{authorid}")
     public String add(
-            @AuthenticationPrincipal User owner,//???
+            @AuthenticationPrincipal User owner,
             @RequestParam String name,
-            @RequestParam String authorid,
+            @RequestParam String authorId,
             Map<String, Object> model,
             @RequestParam("file") MultipartFile file
     ) throws IOException {
-        Iterable <Author> authors = authorRepo.findAllById(Collections.singleton(Long.parseLong(authorid)));
-        List<Author> authorList = new LinkedList<>();
-        authors.forEach(authorList::add);
-        int i = authorList.size();
-        Author author = authorList.get(i-1);
-
-        Book book = new Book(name, owner, author);
-
+        Optional<Author> authorById = authorRepo.findById(Long.parseLong(authorId));
+        Book book = new Book(name, owner, authorById.get());
         if (file != null && !file.getOriginalFilename().isEmpty()) {//проверяем есть ли файл не равный null
             File uploadDir = new File(uploadPath);
-
             if (!uploadDir.exists()) {//если директория не существует - создаем ее
                 uploadDir.mkdir();
             }
@@ -74,19 +91,42 @@ public class AuthorController {
             book.setFilename(resultFilename);
         }
         bookRepo.save(book);
-        Iterable<Book> books = bookRepo.findAll();
+        Iterable<Book> books = authorById.get().getBooks();
         model.put("books", books);
-        return "redirect:/book";
+        model.put("authorId", authorId);
+        return "bookList";
+       // return "redirect:/author";
     }
 
-    @PostMapping
+    @GetMapping("/add")
     public  String authorSave(
             @RequestParam String authorname, Model model
     ){
-        Author author = new Author(authorname);
-        authorRepo.save(author);
+       Author authorsOld = authorRepo.findByAuthorname(authorname);
+       if(authorsOld  == null){
+           Author author = new Author(authorname);
+           authorRepo.save(author);
+           model.addAttribute("authorname","Name added!");
+       } else {
+           model.addAttribute("authorname","This name already exists!");
+       }
         Iterable<Author> authors = authorRepo.findAll();
         model.addAttribute("authors", authors);
-        return "redirect:/author";
+        return "authorList";
     }
+
+    @ExceptionHandler(NumberFormatException.class)
+    public String genericErrorPage() {
+        return "genericErrorView";
+    }
+    @ExceptionHandler(NoSuchElementException.class)
+    public String genericNoSuchElementException() {
+        return "genericNoSuchElementException";
+    }
+
+    @ExceptionHandler(javax.persistence.RollbackException.class)
+        public  String genericRollbackException(){
+        return "genericRollbackException";
+    }
+
 }

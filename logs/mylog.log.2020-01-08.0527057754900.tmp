@@ -1,0 +1,1117 @@
+2020-01-08 00:19:54.988  WARN 30439 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 00:20:13.458  WARN 30439 --- [http-nio-8080-exec-4] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [275] milliseconds.
+2020-01-08 00:52:17.739  WARN 3713 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 00:54:58.079  WARN 3971 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 00:55:23.391 ERROR 3971 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IndexOutOfBoundsException: Index: 1, Size: 1] with root cause
+
+java.lang.IndexOutOfBoundsException: Index: 1, Size: 1
+	at java.base/java.util.LinkedList.checkElementIndex(LinkedList.java:559) ~[na:na]
+	at java.base/java.util.LinkedList.get(LinkedList.java:480) ~[na:na]
+	at org.example.audiobookS.controller.AuthorController.add(AuthorController.java:61) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:141) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-01-08 00:55:59.739  WARN 4154 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 00:57:00.959  WARN 4347 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:01:48.010  WARN 4575 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:01:58.675 ERROR 4575 --- [http-nio-8080-exec-5] freemarker.runtime                       : Error executing FreeMarker template
+
+freemarker.core.NonStringOrTemplateOutputException: For "${...}" content: Expected a string or something automatically convertible to string (number, date or boolean), or "template output" , but this has evaluated to a method+sequence (wrapper: f.e.b.SimpleMethodModel):
+==> book.getAuthorName!""  [in template "main.ftlh" at line 58, column 27]
+
+----
+Tip: Maybe using obj.something instead of obj.getSomething will yield the desired value.
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${book.getAuthorName!""}  [in template "main.ftlh" at line 58, column 25]
+	~ Reached through: #nested  [in template "parts/common.ftlh" in macro "page" at line 10, column 1]
+	~ Reached through: @c.page  [in template "main.ftlh" at line 4, column 1]
+----
+	at freemarker.core.EvalUtil.coerceModelToTextualCommon(EvalUtil.java:523) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:401) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:370) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.DollarVariable.calculateInterpolatedStringOrMarkup(DollarVariable.java:100) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:63) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock$IterationContext.executedNestedContentForCollOrSeqListing(IteratorBlock.java:321) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedContent(IteratorBlock.java:271) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock$IterationContext.accept(IteratorBlock.java:244) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visitIteratorBlock(Environment.java:643) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:108) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.ListElseContainer.accept(ListElseContainer.java:40) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeNestedContent(Environment.java:619) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.BodyInstruction.accept(BodyInstruction.java:60) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeMacroOrFunctionCommonPart(Environment.java:872) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeMacro(Environment.java:809) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.UnifiedCall.accept(UnifiedCall.java:83) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:331) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:337) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.process(Environment.java:310) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.template.Template.process(Template.java:383) ~[freemarker-2.3.29.jar:2.3.29]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:391) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:304) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:255) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:179) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-01-08 01:01:58.690 ERROR 4575 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is freemarker.core.NonStringOrTemplateOutputException: For "${...}" content: Expected a string or something automatically convertible to string (number, date or boolean), or "template output" , but this has evaluated to a method+sequence (wrapper: f.e.b.SimpleMethodModel):
+==> book.getAuthorName!""  [in template "main.ftlh" at line 58, column 27]
+
+----
+Tip: Maybe using obj.something instead of obj.getSomething will yield the desired value.
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${book.getAuthorName!""}  [in template "main.ftlh" at line 58, column 25]
+	~ Reached through: #nested  [in template "parts/common.ftlh" in macro "page" at line 10, column 1]
+	~ Reached through: @c.page  [in template "main.ftlh" at line 4, column 1]
+----] with root cause
+
+freemarker.core.NonStringOrTemplateOutputException: For "${...}" content: Expected a string or something automatically convertible to string (number, date or boolean), or "template output" , but this has evaluated to a method+sequence (wrapper: f.e.b.SimpleMethodModel):
+==> book.getAuthorName!""  [in template "main.ftlh" at line 58, column 27]
+
+----
+Tip: Maybe using obj.something instead of obj.getSomething will yield the desired value.
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${book.getAuthorName!""}  [in template "main.ftlh" at line 58, column 25]
+	~ Reached through: #nested  [in template "parts/common.ftlh" in macro "page" at line 10, column 1]
+	~ Reached through: @c.page  [in template "main.ftlh" at line 4, column 1]
+----
+	at freemarker.core.EvalUtil.coerceModelToTextualCommon(EvalUtil.java:523) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:401) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:370) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.DollarVariable.calculateInterpolatedStringOrMarkup(DollarVariable.java:100) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:63) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock$IterationContext.executedNestedContentForCollOrSeqListing(IteratorBlock.java:321) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedContent(IteratorBlock.java:271) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock$IterationContext.accept(IteratorBlock.java:244) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visitIteratorBlock(Environment.java:643) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:108) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.ListElseContainer.accept(ListElseContainer.java:40) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeNestedContent(Environment.java:619) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.BodyInstruction.accept(BodyInstruction.java:60) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeMacroOrFunctionCommonPart(Environment.java:872) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeMacro(Environment.java:809) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.UnifiedCall.accept(UnifiedCall.java:83) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:331) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:337) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.process(Environment.java:310) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.template.Template.process(Template.java:383) ~[freemarker-2.3.29.jar:2.3.29]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:391) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:304) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:255) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:179) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-01-08 01:01:58.708 ERROR 4575 --- [http-nio-8080-exec-5] s.e.ErrorMvcAutoConfiguration$StaticView : Cannot render error page for request [/main] and exception [For "${...}" content: Expected a string or something automatically convertible to string (number, date or boolean), or "template output" , but this has evaluated to a method+sequence (wrapper: f.e.b.SimpleMethodModel):
+==> book.getAuthorName!""  [in template "main.ftlh" at line 58, column 27]
+
+----
+Tip: Maybe using obj.something instead of obj.getSomething will yield the desired value.
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${book.getAuthorName!""}  [in template "main.ftlh" at line 58, column 25]
+	~ Reached through: #nested  [in template "parts/common.ftlh" in macro "page" at line 10, column 1]
+	~ Reached through: @c.page  [in template "main.ftlh" at line 4, column 1]
+----] as the response has already been committed. As a result, the response may have the wrong status code.
+2020-01-08 01:08:27.826  WARN 4858 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:08:55.031 ERROR 4858 --- [http-nio-8080-exec-5] freemarker.runtime                       : Error executing FreeMarker template
+
+freemarker.core.NonStringOrTemplateOutputException: For "${...}" content: Expected a string or something automatically convertible to string (number, date or boolean), or "template output" , but this has evaluated to a method+sequence (wrapper: f.e.b.SimpleMethodModel):
+==> book.getAuthorName!""  [in template "main.ftlh" at line 58, column 27]
+
+----
+Tip: Maybe using obj.something instead of obj.getSomething will yield the desired value.
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${book.getAuthorName!""}  [in template "main.ftlh" at line 58, column 25]
+	~ Reached through: #nested  [in template "parts/common.ftlh" in macro "page" at line 10, column 1]
+	~ Reached through: @c.page  [in template "main.ftlh" at line 4, column 1]
+----
+	at freemarker.core.EvalUtil.coerceModelToTextualCommon(EvalUtil.java:523) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:401) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:370) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.DollarVariable.calculateInterpolatedStringOrMarkup(DollarVariable.java:100) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:63) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock$IterationContext.executedNestedContentForCollOrSeqListing(IteratorBlock.java:321) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedContent(IteratorBlock.java:271) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock$IterationContext.accept(IteratorBlock.java:244) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visitIteratorBlock(Environment.java:643) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:108) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.ListElseContainer.accept(ListElseContainer.java:40) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeNestedContent(Environment.java:619) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.BodyInstruction.accept(BodyInstruction.java:60) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeMacroOrFunctionCommonPart(Environment.java:872) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeMacro(Environment.java:809) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.UnifiedCall.accept(UnifiedCall.java:83) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:331) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:337) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.process(Environment.java:310) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.template.Template.process(Template.java:383) ~[freemarker-2.3.29.jar:2.3.29]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:391) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:304) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:255) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:179) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-01-08 01:08:55.042 ERROR 4858 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is freemarker.core.NonStringOrTemplateOutputException: For "${...}" content: Expected a string or something automatically convertible to string (number, date or boolean), or "template output" , but this has evaluated to a method+sequence (wrapper: f.e.b.SimpleMethodModel):
+==> book.getAuthorName!""  [in template "main.ftlh" at line 58, column 27]
+
+----
+Tip: Maybe using obj.something instead of obj.getSomething will yield the desired value.
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${book.getAuthorName!""}  [in template "main.ftlh" at line 58, column 25]
+	~ Reached through: #nested  [in template "parts/common.ftlh" in macro "page" at line 10, column 1]
+	~ Reached through: @c.page  [in template "main.ftlh" at line 4, column 1]
+----] with root cause
+
+freemarker.core.NonStringOrTemplateOutputException: For "${...}" content: Expected a string or something automatically convertible to string (number, date or boolean), or "template output" , but this has evaluated to a method+sequence (wrapper: f.e.b.SimpleMethodModel):
+==> book.getAuthorName!""  [in template "main.ftlh" at line 58, column 27]
+
+----
+Tip: Maybe using obj.something instead of obj.getSomething will yield the desired value.
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${book.getAuthorName!""}  [in template "main.ftlh" at line 58, column 25]
+	~ Reached through: #nested  [in template "parts/common.ftlh" in macro "page" at line 10, column 1]
+	~ Reached through: @c.page  [in template "main.ftlh" at line 4, column 1]
+----
+	at freemarker.core.EvalUtil.coerceModelToTextualCommon(EvalUtil.java:523) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:401) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:370) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.DollarVariable.calculateInterpolatedStringOrMarkup(DollarVariable.java:100) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:63) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock$IterationContext.executedNestedContentForCollOrSeqListing(IteratorBlock.java:321) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedContent(IteratorBlock.java:271) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock$IterationContext.accept(IteratorBlock.java:244) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visitIteratorBlock(Environment.java:643) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:108) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.ListElseContainer.accept(ListElseContainer.java:40) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeNestedContent(Environment.java:619) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.BodyInstruction.accept(BodyInstruction.java:60) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeMacroOrFunctionCommonPart(Environment.java:872) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeMacro(Environment.java:809) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.UnifiedCall.accept(UnifiedCall.java:83) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:331) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:337) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.process(Environment.java:310) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.template.Template.process(Template.java:383) ~[freemarker-2.3.29.jar:2.3.29]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:391) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:304) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:255) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:179) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-01-08 01:08:55.060 ERROR 4858 --- [http-nio-8080-exec-5] s.e.ErrorMvcAutoConfiguration$StaticView : Cannot render error page for request [/main] and exception [For "${...}" content: Expected a string or something automatically convertible to string (number, date or boolean), or "template output" , but this has evaluated to a method+sequence (wrapper: f.e.b.SimpleMethodModel):
+==> book.getAuthorName!""  [in template "main.ftlh" at line 58, column 27]
+
+----
+Tip: Maybe using obj.something instead of obj.getSomething will yield the desired value.
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${book.getAuthorName!""}  [in template "main.ftlh" at line 58, column 25]
+	~ Reached through: #nested  [in template "parts/common.ftlh" in macro "page" at line 10, column 1]
+	~ Reached through: @c.page  [in template "main.ftlh" at line 4, column 1]
+----] as the response has already been committed. As a result, the response may have the wrong status code.
+2020-01-08 01:09:44.631  WARN 5040 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:18:58.604  WARN 5377 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:21:36.367  WARN 5594 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:23:35.992  WARN 5764 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:25:02.000  WARN 5947 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:27:16.576  WARN 6111 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:32:38.475  WARN 6350 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:33:26.289  WARN 6516 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:33:38.184 ERROR 6516 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.context.ApplicationContextException: Failed to parse [bookList.ftlh]; nested exception is freemarker.core.ParseException: Syntax error in template "bookList.ftlh" in line 26, column 1:
+Encountered "</@c.page>", but was expecting one of:
+    <ATTEMPT>
+    <IF>
+    <LIST>
+    <ITEMS>
+    <SEP>
+    <FOREACH>
+    <SWITCH>
+    <ASSIGN>
+    <GLOBALASSIGN>
+    <LOCALASSIGN>
+    <_INCLUDE>
+    <IMPORT>
+    <FUNCTION>
+    <MACRO>
+    <TRANSFORM>
+    <VISIT>
+    <STOP>
+    <RETURN>
+    <CALL>
+    <SETTING>
+    <OUTPUTFORMAT>
+    <AUTOESC>
+    <NOAUTOESC>
+    <COMPRESS>
+    <COMMENT>
+    <TERSE_COMMENT>
+    <NOPARSE>
+    <END_LIST>
+    <ELSE>
+    <BREAK>
+    <CONTINUE>
+    <SIMPLE_RETURN>
+    <HALT>
+    <FLUSH>
+    <TRIM>
+    <LTRIM>
+    <RTRIM>
+    <NOTRIM>
+    <SIMPLE_NESTED>
+    <NESTED>
+    <SIMPLE_RECURSE>
+    <RECURSE>
+    <FALLBACK>
+    <ESCAPE>
+    <NOESCAPE>
+    <UNIFIED_CALL>
+    <STATIC_TEXT_WS>
+    <STATIC_TEXT_NON_WS>
+    <STATIC_TEXT_FALSE_ALARM>
+    "${"
+    "#{"
+    "[="] with root cause
+
+freemarker.core.ParseException: Syntax error in template "bookList.ftlh" in line 26, column 1:
+Encountered "</@c.page>", but was expecting one of:
+    <ATTEMPT>
+    <IF>
+    <LIST>
+    <ITEMS>
+    <SEP>
+    <FOREACH>
+    <SWITCH>
+    <ASSIGN>
+    <GLOBALASSIGN>
+    <LOCALASSIGN>
+    <_INCLUDE>
+    <IMPORT>
+    <FUNCTION>
+    <MACRO>
+    <TRANSFORM>
+    <VISIT>
+    <STOP>
+    <RETURN>
+    <CALL>
+    <SETTING>
+    <OUTPUTFORMAT>
+    <AUTOESC>
+    <NOAUTOESC>
+    <COMPRESS>
+    <COMMENT>
+    <TERSE_COMMENT>
+    <NOPARSE>
+    <END_LIST>
+    <ELSE>
+    <BREAK>
+    <CONTINUE>
+    <SIMPLE_RETURN>
+    <HALT>
+    <FLUSH>
+    <TRIM>
+    <LTRIM>
+    <RTRIM>
+    <NOTRIM>
+    <SIMPLE_NESTED>
+    <NESTED>
+    <SIMPLE_RECURSE>
+    <RECURSE>
+    <FALLBACK>
+    <ESCAPE>
+    <NOESCAPE>
+    <UNIFIED_CALL>
+    <STATIC_TEXT_WS>
+    <STATIC_TEXT_NON_WS>
+    <STATIC_TEXT_FALSE_ALARM>
+    "${"
+    "#{"
+    "[="
+	at freemarker.core.FMParser.generateParseException(FMParser.java:6107) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.FMParser.jj_consume_token(FMParser.java:5966) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.FMParser.List(FMParser.java:1927) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.FMParser.FreemarkerDirective(FMParser.java:3620) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.FMParser.MixedContentElements(FMParser.java:4006) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.FMParser.UnifiedMacroTransform(FMParser.java:2996) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.FMParser.FreemarkerDirective(FMParser.java:3651) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.FMParser.MixedContentElements(FMParser.java:4006) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.FMParser.Root(FMParser.java:4652) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.template.Template.<init>(Template.java:252) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.cache.TemplateCache.loadTemplate(TemplateCache.java:549) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.cache.TemplateCache.getTemplateInternal(TemplateCache.java:439) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.cache.TemplateCache.getTemplate(TemplateCache.java:292) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2798) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2656) ~[freemarker-2.3.29.jar:2.3.29]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.getTemplate(FreeMarkerView.java:375) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.checkResource(FreeMarkerView.java:229) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.UrlBasedViewResolver.loadView(UrlBasedViewResolver.java:532) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractCachingViewResolver.createView(AbstractCachingViewResolver.java:275) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.UrlBasedViewResolver.createView(UrlBasedViewResolver.java:495) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractCachingViewResolver.resolveViewName(AbstractCachingViewResolver.java:174) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.ContentNegotiatingViewResolver.getCandidateViews(ContentNegotiatingViewResolver.java:310) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.ContentNegotiatingViewResolver.resolveViewName(ContentNegotiatingViewResolver.java:228) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.resolveViewName(DispatcherServlet.java:1414) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1350) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-01-08 01:36:13.525  WARN 6679 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:36:26.286 ERROR 6679 --- [http-nio-8080-exec-1] freemarker.runtime                       : Error executing FreeMarker template
+
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> books  [in template "bookList.ftlh" at line 16, column 12]
+
+----
+Tip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #list-#else-container  [in template "bookList.ftlh" at line 16, column 5]
+	~ Reached through: #nested  [in template "parts/common.ftlh" in macro "page" at line 10, column 1]
+	~ Reached through: @c.page  [in template "bookList.ftlh" at line 3, column 1]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:134) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Expression.assertNonNull(Expression.java:251) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:104) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.ListElseContainer.accept(ListElseContainer.java:40) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeNestedContent(Environment.java:619) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.BodyInstruction.accept(BodyInstruction.java:60) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeMacroOrFunctionCommonPart(Environment.java:872) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeMacro(Environment.java:809) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.UnifiedCall.accept(UnifiedCall.java:83) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:331) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:337) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.process(Environment.java:310) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.template.Template.process(Template.java:383) ~[freemarker-2.3.29.jar:2.3.29]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:391) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:304) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:255) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:179) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-01-08 01:36:26.293 ERROR 6679 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> books  [in template "bookList.ftlh" at line 16, column 12]
+
+----
+Tip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #list-#else-container  [in template "bookList.ftlh" at line 16, column 5]
+	~ Reached through: #nested  [in template "parts/common.ftlh" in macro "page" at line 10, column 1]
+	~ Reached through: @c.page  [in template "bookList.ftlh" at line 3, column 1]
+----] with root cause
+
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> books  [in template "bookList.ftlh" at line 16, column 12]
+
+----
+Tip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #list-#else-container  [in template "bookList.ftlh" at line 16, column 5]
+	~ Reached through: #nested  [in template "parts/common.ftlh" in macro "page" at line 10, column 1]
+	~ Reached through: @c.page  [in template "bookList.ftlh" at line 3, column 1]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:134) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Expression.assertNonNull(Expression.java:251) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:104) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.ListElseContainer.accept(ListElseContainer.java:40) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeNestedContent(Environment.java:619) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.BodyInstruction.accept(BodyInstruction.java:60) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:367) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeMacroOrFunctionCommonPart(Environment.java:872) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.invokeMacro(Environment.java:809) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.UnifiedCall.accept(UnifiedCall.java:83) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:331) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.visit(Environment.java:337) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.core.Environment.process(Environment.java:310) ~[freemarker-2.3.29.jar:2.3.29]
+	at freemarker.template.Template.process(Template.java:383) ~[freemarker-2.3.29.jar:2.3.29]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:391) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:304) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:255) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:179) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-01-08 01:36:26.309 ERROR 6679 --- [http-nio-8080-exec-1] s.e.ErrorMvcAutoConfiguration$StaticView : Cannot render error page for request [/book] and exception [The following has evaluated to null or missing:
+==> books  [in template "bookList.ftlh" at line 16, column 12]
+
+----
+Tip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #list-#else-container  [in template "bookList.ftlh" at line 16, column 5]
+	~ Reached through: #nested  [in template "parts/common.ftlh" in macro "page" at line 10, column 1]
+	~ Reached through: @c.page  [in template "bookList.ftlh" at line 3, column 1]
+----] as the response has already been committed. As a result, the response may have the wrong status code.
+2020-01-08 01:40:17.879  WARN 6948 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:42:44.119  WARN 7084 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:43:53.494  WARN 7245 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-08 01:46:55.198  WARN 7446 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
