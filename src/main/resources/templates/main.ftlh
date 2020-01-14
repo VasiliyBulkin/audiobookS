@@ -33,11 +33,9 @@
             <p>
                 <label for="filter">Book by pattern</label>
                 <input type="text" name="filter" id="filter" placeholder="Input the search pattern"  value="${filter!''}"/>
-                <button type="submit">Search</button>
-            </p>
-        </form>
 
-        <form method="get" action="/main">
+            </p>
+
             <p>
                 <label for="filterAuthorName">Book by author name</label>
                 <input type="text" name="filterAuthorName" id="filterAuthorName" placeholder="Input the author name"  value="${filterAuthorName!''}"/>

@@ -1,5 +1,7 @@
 package org.example.audiobookS.controller;
 
+
+
 import org.example.audiobookS.domain.Author;
 import org.example.audiobookS.domain.Book;
 import org.example.audiobookS.domain.Role;
@@ -7,8 +9,10 @@ import org.example.audiobookS.domain.User;
 import org.example.audiobookS.repos.AuthorRepo;
 import org.example.audiobookS.repos.BookRepo;
 
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +31,7 @@ import java.util.*;
 public class MainController {//controller fo greeting
     @Autowired//this is annotation for injection dependencies in field
     private BookRepo bookRepo;
+
 
     @Autowired
     private AuthorRepo authorRepo;
@@ -62,7 +67,7 @@ public class MainController {//controller fo greeting
             Model model
     ) {
         Iterable<Book> books;
-        if (filter != null && !filter.isEmpty()) {
+    /*    if (filter != null && !filter.isEmpty()) {
             books = bookRepo.findByNameContaining(filter);
         } else if (id != null && !id.isEmpty()) {
             books = bookRepo.findAllById(Collections.singleton(Long.parseLong(id)));
@@ -79,8 +84,16 @@ public class MainController {//controller fo greeting
         }
         else {
             books = bookRepo.findAll();
-        }
-
+        }*/
+       // books = bookRepo.findAll(Sort.by(Sort.Direction.ASC,"name"));
+       // books = bookRepo.findAll(Sort.by(Sort.Direction.DESC,"name"));
+       // books = bookRepo.findAll(Sort.by(Sort.Order.by("name")));
+       // books = bookRepo.findAll(Sort.by(Sort.Order.desc("name")));
+        //books = bookRepo.findByAuthorAuthornameContaining(filterAuthorName);
+       // books = bookRepo.findByAuthorAuthornameContainingAndNameContaining(filterAuthorName, filter);
+       // books = bookRepo.findByAuthorAuthornameContainingAndNameContaining(filterAuthorName, filter);
+       // books = bookRepo.findByAuthorAuthornameContainingAndNameContainingOrderByAuthorAuthorname(filterAuthorName, filter);
+        books = bookRepo.findByAuthorAuthornameContainingAndNameContainingOrderByNameAscAuthorAuthornameAsc(filterAuthorName, filter);
 
         model.addAttribute("id", id);
         model.addAttribute("books", books);
@@ -93,6 +106,12 @@ public class MainController {//controller fo greeting
         }
 
         return "main";//return this VIEW file name from folder templates
+    }
+
+    @Test
+    public void testFindByNameLike(){
+        List<Book> books = bookRepo.findByNameContaining("n");
+        books.forEach(book -> System.out.println(book.toString()));
     }
 
 

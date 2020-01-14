@@ -11,7 +11,5 @@ public interface AuthorRepo  extends JpaRepository<Author, Long> {
   List<Author> findByAuthornameContainingOrderByAuthornameDesc(String authorname);
   Author findByAuthorname(String authorname);
   List<Author> findByAuthornameContaining(String authorname);
-
-
-
+  List<Author> findByBooksNameLike(String bookName);
 }

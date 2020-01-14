@@ -9,6 +9,7 @@ import org.example.audiobookS.repos.AuthorRepo;
 import org.example.audiobookS.repos.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -51,6 +52,9 @@ public class AuthorController {
            authors = authorRepo.findByAuthornameContaining(filterAuthorName);
            reOrderByAuthorName = "unchecked";
        }
+       // String filterMod = "%"+filterAuthorName +"%";
+       // authors = authorRepo.findByBooksNameLike(filterMod);
+
         model.addAttribute("authors",authors);
         model.addAttribute("filterAuthorName", filterAuthorName);
         model.addAttribute("orderByAuthorName", orderByAuthorName);

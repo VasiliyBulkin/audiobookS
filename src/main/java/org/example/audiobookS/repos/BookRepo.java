@@ -10,6 +10,7 @@ import org.example.audiobookS.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
@@ -26,6 +27,12 @@ public interface BookRepo extends JpaRepository<Book, Long> {
     List<Book> findByNameAndAuthorContaining(String name, Author author);
     List<Book> findByAuthorAndNameContaining(Author author, String name);
     List<Book> findByAuthorContaining(Author author);
+    List<Book> findByAuthorAuthornameContaining(String authorname);
+    List<Book> findByAuthorAuthornameContainingAndNameContaining(String authorname, String name);
+    List<Book> findByAuthorAuthornameContainingAndNameContainingOrderByName(String authorname, String name);
+    List<Book> findByAuthorAuthornameContainingAndNameContainingOrderByAuthorAuthorname(String authorname, String name);
+    List<Book> findByAuthorAuthornameContainingAndNameContainingOrderByAuthorAuthornameAscNameAsc(String authorname, String name);
+    List<Book> findByAuthorAuthornameContainingAndNameContainingOrderByNameAscAuthorAuthornameAsc(String authorname, String name);
 
     @Query(value = "SELECT * FROM book \n" +
             "JOIN author \n" +
