@@ -4,8 +4,6 @@
 <p><span><a href="/main">Main page</a></span></p>
 <p><span><a href="/author">Storage management</a></span></p>
 <table>
-    <caption>List of User</caption>
-
     <thead>
         <tr>
             <th>Name</th>

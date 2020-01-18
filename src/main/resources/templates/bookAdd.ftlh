@@ -27,7 +27,8 @@
                 <legend><strong>Add new book</strong></legend>
                 <form method="post" action="main" enctype="multipart/form-data">
                     <label for="nameofbook">Input the name of book</label>
-                    <p><input type="text" name="name" id="nameofbook" value="no name"/></p>
+                    <p><input type="text" name="name" id="nameofbook" placeholder="input more then zero character"/></p>
+
 
                     <label for="filecover">Chose the cover</label>
                     <p><input type="file"  id="filecover" name="file"></p>

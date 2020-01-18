@@ -1,19 +1,14 @@
 <#import "parts/common.ftlh" as c>
 
 <@c.page>
-
-<p><span><a href="/main">Main page</a></span></p>
-<p><span><a href="/user">User list</a> </span></p>
-
 <div>
     <fieldset>
         <legend><strong>Add the new author</strong></legend>
         <form  action="/author/add" method="get">
-            <label for="authorname">Input the author name</label>
-            <input type="text" name="authorname" id="authorname" value="${authorname!''}" >
+            <input type="text" name="authorname" id="authorname" placeholder="Input the author name">
             <button type="submit">Add name</button>
+            <label for="authorname"> ${message!''}</label>
         </form>
-
 
     </fieldset>
 </div>
@@ -26,7 +21,7 @@
             <th>
                 <form method="get" action="/author">
                     <p>
-                        <label for="filterAuthorName">Name</label>
+                        <label for="filterAuthorName">Search author</label>
                         <input type="text" name="filterAuthorName" id="filterAuthorName" placeholder="Input the author name"  value="${filterAuthorName!''}"/>
                         <label for="orderByAuthorName">Order</label>
                         <input type="radio" name="orderByAuthorName" id="orderByAuthorName" value="checked"  ${orderByAuthorName!''}/>
@@ -44,8 +39,9 @@
             <tr>
                 <td>${author.authorname}</td>
                 <td>
-                   <p><a href="/book/${author.authorname}">View books</a></p>
-                   <p><a href="/author/${author.id}">Add book</a></p>
+                    <p><a href="/book/${author.authorname}">View books</a></p>
+                    <p><a href="/author/${author.id}">Add book</a></p>
+                    <p><a href="/author/delete/${author.id}">Delete author</a></p>
                 </td>
             </tr>
             </#list>

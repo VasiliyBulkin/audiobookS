@@ -1,12 +1,10 @@
 package org.example.audiobookS.controller;
 
 
-import org.example.audiobookS.domain.Author;
-import org.example.audiobookS.domain.Book;
-import org.example.audiobookS.domain.Role;
-import org.example.audiobookS.domain.User;
+import org.example.audiobookS.domain.*;
 import org.example.audiobookS.repos.AuthorRepo;
 import org.example.audiobookS.repos.BookRepo;
+import org.example.audiobookS.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Sort;
@@ -31,6 +29,9 @@ public class AuthorController {
 
     @Autowired//this is annotation for injection dependencies in field
     private BookRepo bookRepo;
+
+    @Autowired
+    private UserRepo userRepo;
 
     @GetMapping
     public String authorList(
@@ -83,7 +84,8 @@ public class AuthorController {
             @RequestParam("file") MultipartFile file
     ) throws IOException {
         Optional<Author> authorById = authorRepo.findById(Long.parseLong(authorId));
-        Book book = new Book(name, owner, authorById.get());
+        Author author = authorById.get();
+        Book book = new Book(name, owner, author);
         if (file != null && !file.getOriginalFilename().isEmpty()) {//проверяем есть ли файл не равный null
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists()) {//если директория не существует - создаем ее
@@ -94,25 +96,63 @@ public class AuthorController {
             file.transferTo(new File(uploadPath + "/" + resultFilename));
             book.setFilename(resultFilename);
         }
+
+        owner.getBooks().add(book);
+        //userRepo.save(owner);
         bookRepo.save(book);
-        Iterable<Book> books = authorById.get().getBooks();
-        model.put("books", books);
-        model.put("authorId", authorId);
-        return "bookList";
+        String authorName = author.getAuthorname();
+        return "redirect:/book/" + authorName;
+      //  Set<Book> books= author.getBooks();
+      //  books.add(book);
+       // Genre myGenre = new Genre(genre);
+       // myGenre.addBook(book);
+       // bookRepo.deleteById();
+       // String[] mSomeGenres = { "detective", "horror", "genre" };
+      //  Set<Genre> genres = new HashSet<>();
+      //  for (String g : mSomeGenres){
+       //     genres.add(new Genre());
+      //  }
+   /*
+        Set<Genre> genres = new HashSet<>();
+        for (String g : mSomeGenres){
+            genres.add(new Genre(g));
+        }
+//user_id bigint,
+        for(Genre myGenre: genres){
+            myGenre.addBook(book);
+        }
+*/
+       // book.setGenres(genres);
+
+       // Iterable<Book> books = authorById.get().getBooks();
+        //model.put("books", books);
+       // model.put("authorId", authorId);
+
+        //return "bookList";
        // return "redirect:/author";
+    }
+
+    @GetMapping("delete/{authorid}")
+    public String deleteAuthor(
+            @PathVariable String authorid,
+            Model model
+    ){
+        authorRepo.deleteById(Long.parseLong(authorid));
+        return "redirect:/author";
     }
 
     @GetMapping("/add")
     public  String authorSave(
-            @RequestParam String authorname, Model model
+            @RequestParam String authorname,
+            Model model
     ){
        Author authorsOld = authorRepo.findByAuthorname(authorname);
        if(authorsOld  == null){
            Author author = new Author(authorname);
            authorRepo.save(author);
-           model.addAttribute("authorname","Name added!");
+           model.addAttribute("message","Name added!");
        } else {
-           model.addAttribute("authorname","This name already exists!");
+           model.addAttribute("message","This name already exists!");
        }
         Iterable<Author> authors = authorRepo.findAll();
         model.addAttribute("authors", authors);

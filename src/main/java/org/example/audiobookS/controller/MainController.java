@@ -16,10 +16,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.swing.*;
@@ -107,6 +104,22 @@ public class MainController {//controller fo greeting
 
         return "main";//return this VIEW file name from folder templates
     }
+
+
+    @GetMapping("/user-owner/{user}")
+    public String userBooks(
+            @AuthenticationPrincipal User currentUser,
+            @PathVariable User user,
+            Model model
+    ){
+
+        Set<Book> books = user.getBooks();
+        model.addAttribute("books", books);
+        return "userBooks";
+    }
+
+
+
 
     @Test
     public void testFindByNameLike(){

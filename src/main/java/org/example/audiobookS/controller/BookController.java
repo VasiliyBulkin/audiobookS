@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 import java.util.Set;
@@ -33,9 +31,21 @@ public class BookController {
             Model model){
         Author author;
         author = authorRepo.findByAuthorname(authorname);
-        Set<Book> books;
-        books = author.getBooks();
+        Set<Book> books = author.getBooks();
         model.addAttribute("books", books);
         return "bookList";
     }
+
+    @PostMapping("/deleteBook")
+    public String deleteBook(
+            @RequestParam String bookId,
+            @RequestParam String authorName
+
+    ){
+        //Optional<Author> authorById = authorRepo.findById(Long.parseLong(authorId));
+        bookRepo.deleteById(Long.parseLong(bookId));
+
+        return "redirect:/book/" + authorName;
+    }
+
 }

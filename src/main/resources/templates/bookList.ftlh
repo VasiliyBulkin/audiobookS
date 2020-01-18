@@ -1,22 +1,18 @@
 <#import "parts/common.ftlh" as c>
-
 <@c.page>
-<p><span><a href="/main">Main page</a></span></p>
-<p><span><a href="/author">Storage management</a></span></p>
 
 <#if authorId??>
       <p><a href="/author/${authorId!''}">Add another book</a></p>
 </#if>
-
-
 <div>
     <table>
-        <caption>List of books in storage</caption>
         <tr>
             <th>Book name</th>
             <th>Book owner</th>
             <th>Book author</th>
+
             <th>Book cover</th>
+            <th>Action</th>
         </tr>
     </table>
     <#list books as book>
@@ -29,6 +25,14 @@
                 <#if book.filename??> <!-- проверка на наличее поля filename, ??приведение к булеву типу -->
                 <img style="width:200px;height:200px;" src="/img/${book.filename}">
             </#if>
+            </td>
+            <td>
+                    <form method="post" action="deleteBook" enctype="multipart/form-data">
+                        <input type="hidden" value="${book.id}" name="bookId">
+                        <input type="hidden" value="${book.authorName}" name="authorName">
+                        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                        <button type="submit">Delete book</button>
+                    </form>
             </td>
         </tr>
     </table>

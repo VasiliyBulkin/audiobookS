@@ -27,6 +27,7 @@ public interface BookRepo extends JpaRepository<Book, Long> {
     List<Book> findByNameAndAuthorContaining(String name, Author author);
     List<Book> findByAuthorAndNameContaining(Author author, String name);
     List<Book> findByAuthorContaining(Author author);
+    List<Book> findByAuthorAuthornameLike(String authorname);
     List<Book> findByAuthorAuthornameContaining(String authorname);
     List<Book> findByAuthorAuthornameContainingAndNameContaining(String authorname, String name);
     List<Book> findByAuthorAuthornameContainingAndNameContainingOrderByName(String authorname, String name);
