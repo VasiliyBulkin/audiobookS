@@ -11,7 +11,7 @@
                     <button type="submit" class="btn btn-primary ml-2 mb-2">Search</button>
             </form>
 
-        <div>
+
             <table >
                 <thead>
                 <tr>
@@ -22,22 +22,31 @@
                 </tr>
                 </thead>
                 <tbody>
-                <#list books as book>
-                <tr>
-                    <td>${book.name!""}</td>
-                    <td>${book.authorName!""}</td>
-                    <td>${book.ownerName!""}</td>
-                    <td>
-                        <#if book.filename??> <!-- проверка на наличее поля filename, ??приведение к булеву типу -->
-                        <img  alt="There could be an image" style="width:200px;height:200px;" src="/img/${book.filename} ">
-                    </#if>
-                    </td>
-                </tr>
+                    <#list books as book>
+                    <tr>
+                        <td>${book.name!""}</td>
+                        <td>${book.authorName!""}</td>
+                        <td>${book.ownerName!""}</td>
+                        <td>
+                            <#if book.filename??> <!-- проверка на наличее поля filename, ??приведение к булеву типу -->
+                            <img  alt="There could be an image" style="width:200px;height:200px;" src="/img/${book.filename} ">
+                        </#if>
+                        </td>
+                    </tr>
                 <#else>
-                No books
+                    <tr>
+                        <td>
+                            No books found for this request
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                        </td>
+                    </tr>
+
                 </#list>
                 </tbody>
             </table>
-        </div>
+</div>
 
 </@c.page>

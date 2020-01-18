@@ -102,6 +102,7 @@ public class AuthorController {
         bookRepo.save(book);
         String authorName = author.getAuthorname();
         return "redirect:/book/" + authorName;
+
       //  Set<Book> books= author.getBooks();
       //  books.add(book);
        // Genre myGenre = new Genre(genre);
@@ -137,8 +138,19 @@ public class AuthorController {
             @PathVariable String authorid,
             Model model
     ){
-        authorRepo.deleteById(Long.parseLong(authorid));
-        return "redirect:/author";
+        Optional<Author> authorById = authorRepo.findById(Long.parseLong(authorid));
+        Author author = authorById.get();
+
+        if(author.getBooks().isEmpty()){
+            model.addAttribute("messageSuccess","The "+ author.getAuthorname()+ " has been deleted!");
+            authorRepo.deleteById(Long.parseLong(authorid));
+        }else {
+            model.addAttribute("messageDenied","The "+ author.getAuthorname()+ " has books!");
+        }
+            List<Author> authors = authorRepo.findAll();
+            model.addAttribute("authors",authors);
+            model.addAttribute("author", author);
+            return "authorList";
     }
 
     @GetMapping("/add")
@@ -150,15 +162,15 @@ public class AuthorController {
        if(authorsOld  == null){
            Author author = new Author(authorname);
            authorRepo.save(author);
-           model.addAttribute("message","Name added!");
+           model.addAttribute("messageOK","Name added!");
        } else {
-           model.addAttribute("message","This name already exists!");
+          model.addAttribute("messageNotOk","This name already exists!");
        }
         Iterable<Author> authors = authorRepo.findAll();
+        model.addAttribute("authorname", authorname);
         model.addAttribute("authors", authors);
         return "authorList";
     }
-
     @ExceptionHandler(NumberFormatException.class)
     public String genericErrorPage() {
         return "genericErrorView";

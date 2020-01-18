@@ -32,6 +32,7 @@ public class BookController {
         Author author;
         author = authorRepo.findByAuthorname(authorname);
         Set<Book> books = author.getBooks();
+        model.addAttribute("author", author);
         model.addAttribute("books", books);
         return "bookList";
     }

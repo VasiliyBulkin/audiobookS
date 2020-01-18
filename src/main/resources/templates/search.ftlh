@@ -2,55 +2,83 @@
 <#import "parts/login.ftlh" as l>
 
 <@c.page>
-<div>
-    <@l.logout />
-    <p><span><a href="/main">Main page</a></span></p>
+
+    <form method="get" action="/search">
+
+        <div class="form-group row">
+            <label for="filter" class="col-sm-2 col-form-label">Book name</label>
+            <div class="col-sm-10">
+                <input type="text" name="filter" id="filter" class="form-control" placeholder="Book pattern"  value="${filter!''}"/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="filterAuthorName" class="col-sm-2 col-form-label">Author name</label>
+            <div class="col-sm-10">
+                <input type="text" name="filterAuthorName" id="filterAuthorName" class="form-control" placeholder="Author pattern"  value="${filterAuthorName!''}"/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2">Order by</div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input type="checkbox" name="orderByBookName" id="orderByBookName" class="form-check-input" value="checked" ${orderByBookName!''}/>
+                    <label for="orderByBookName" class="form-check-label">
+                        Book
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="orderByAuthorName" id="orderByAuthorName" class="form-check-input" value="checked" ${orderByAuthorName!''}/>
+                    <label for="orderByAuthorName"class="form-check-label" >
+                        Author
+                </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+
+<div class="form-row">
+            <table>
+               <thead>
+                   <tr>
+                       <th>Name</th>
+                       <th>Author</th>
+                       <th>Owner</th>
+                       <th>Cover</th>
+                   </tr>
+               </thead>
+                <#list books as book>
+                 <tbody>
+                          <tr>
+                              <td>${book.name!""}</td>
+                              <td>${book.authorName!""}</td>
+                              <td>${book.ownerName!""}</td>
+                              <td>
+                                  <#if book.filename??> <!-- проверка на наличее поля filename, ??приведение к булеву типу -->
+                                  <img  alt="There could be an image" style="width:200px;height:200px;" src="/img/${book.filename} ">
+                              </#if>
+                              </td>
+                          </tr>
+                    <#else>
+                          <tr>
+                              <td>
+                                  <div class="alert alert-warning" role="alert">
+                                      No books found for this request
+                                  </div>
+                              </td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                          </tr>
+                 </tbody>
+                </#list>
+            </table>
 
 </div>
-            <table>
-                <caption>List of books</caption>
-                <tr>
-                    <form method="get" action="/search">
-
-                        <th>
-                            <label for="filter">Book name</label>
-                            <input type="text" name="filter" id="filter" placeholder="Input the search pattern"  value="${filter!''}"/>
-                            <label for="orderByBookName">Order by book</label>
-                            <input type="checkbox" name="orderByBookName" id="orderByBookName" value="checked" ${orderByBookName!''}/>
-                            <button type="submit">Search</button>
-                        </th>
-                        <th>
-                            <label for="filterAuthorName">Book author</label>
-                            <input type="text" name="filterAuthorName" id="filterAuthorName" placeholder="Input the author name"  value="${filterAuthorName!''}"/>
-                            <label for="orderByAuthorName">Order by author</label>
-                            <input type="checkbox" name="orderByAuthorName" id="orderByAuthorName" value="checked" ${orderByAuthorName!''}/>
-                            <button type="submit">Search</button>
-                        </th>
-
-                        <th>Book owner</th>
-
-                        </form>
-
-                        <th>Book cover</th>
-                </tr>
-            </table>
-<#list books as book>
-            <table >
-                <tr>
-                    <td>${book.name!""}</td>
-                    <td>${book.authorName!""}</td>
-                    <td>${book.ownerName!""}</td>
-
-                    <td>
-                        <#if book.filename??> <!-- проверка на наличее поля filename, ??приведение к булеву типу -->
-                        <img  alt="There could be an image" style="width:200px;height:200px;" src="/img/${book.filename} ">
-                    </#if>
-                    </td>
-                </tr>
-            </table>
-
-<#else>
-No books
- </#list>
-
 </@c.page>

@@ -60,7 +60,7 @@ public class MainController {//controller fo greeting
             @RequestParam(required = false, defaultValue = "") String filterAuthorName,
             @RequestParam(required = false, defaultValue = "") String filterAuthorId,
             @RequestParam(required = false, defaultValue = "") String filter,
-            @RequestParam(required = false, defaultValue = "") String id,
+           // @RequestParam(required = false, defaultValue = "") String id,
             Model model
     ) {
         Iterable<Book> books;
@@ -92,15 +92,15 @@ public class MainController {//controller fo greeting
        // books = bookRepo.findByAuthorAuthornameContainingAndNameContainingOrderByAuthorAuthorname(filterAuthorName, filter);
         books = bookRepo.findByAuthorAuthornameContainingAndNameContainingOrderByNameAscAuthorAuthornameAsc(filterAuthorName, filter);
 
-        model.addAttribute("id", id);
+        //model.addAttribute("id", id);
         model.addAttribute("books", books);
         model.addAttribute("filter", filter);
-        model.addAttribute("filterAuthorId", filterAuthorId);
+        //model.addAttribute("filterAuthorId", filterAuthorId);
         model.addAttribute("filterAuthorName", filterAuthorName);
-        Set <Role> roles = owner.getRoles();
+       /* Set <Role> roles = owner.getRoles();
         if(roles.contains(Role.ADMIN)){
           model.addAttribute("showLink", "showLink");
-        }
+        }*/
 
         return "main";//return this VIEW file name from folder templates
     }

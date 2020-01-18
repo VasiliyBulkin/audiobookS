@@ -42,7 +42,8 @@ public class SearchController {
         String filterAuthorNameMod = "%"+filterAuthorName+"%";
         List<Book> books;
 
-        if(orderByBookName == null){
+        books = bookRepo.findByAuthorAuthornameContainingAndNameContainingOrderByNameAscAuthorAuthornameAsc(filterAuthorName, filter);
+       /* if(orderByBookName == null){
             if(orderByAuthorName == null){
                 books = bookRepo.findByMatchNameAndAuthor(filterMod, filterAuthorNameMod);
             } else {
@@ -55,8 +56,7 @@ public class SearchController {
             else {
                 books = bookRepo.findByMatchNameAndAuthorOrderBookNameAndAuthorName(filterMod, filterAuthorNameMod);
             }
-        }
-        System.out.println("books.size = " + books.size());
+        }*/
         model.addAttribute("books", books);
         model.addAttribute("filter", filter);
         model.addAttribute("filterAuthorName", filterAuthorName);

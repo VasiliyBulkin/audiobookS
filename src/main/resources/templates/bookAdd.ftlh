@@ -1,8 +1,7 @@
 <#import "parts/common.ftlh" as c>
 
 <@c.page>
-<p><span><a href="/main">Main page</a></span></p>
-<p><span><a href="/author">Storage management</a></span></p>
+
 <table>
     <caption>Add a book to this author</caption>
     <thead>
