@@ -1,6 +1,6 @@
 <#import "parts/common.ftlh" as c>
 <@c.page>
-<div class="form-row">
+
             <form method="get" action="/main" class="form-inline">
                     <label class="sr-only" for="filter">Book</label>
                     <input type="text" name="filter" id="filter" class="form-control mb-2 mr-sm-2" placeholder="Book name"  value="${filter!''}"/>
@@ -11,13 +11,13 @@
                     <button type="submit" class="btn btn-primary ml-2 mb-2">Search</button>
             </form>
 
-
-            <table >
-                <thead>
+    <div class="table-responsive-md">
+            <table class="table table-hover table-bordered">
+                <thead class="thead-dark">
                 <tr>
                     <th>Name</th>
                     <th>Author</th>
-                    <th>Owner</th>
+                    <th>Genres</th>
                     <th>Cover</th>
                 </tr>
                 </thead>
@@ -26,10 +26,10 @@
                     <tr>
                         <td>${book.name!""}</td>
                         <td>${book.authorName!""}</td>
-                        <td>${book.ownerName!""}</td>
+                        <td>${book.genresName!""}</td>
                         <td>
                             <#if book.filename??> <!-- проверка на наличее поля filename, ??приведение к булеву типу -->
-                            <img  alt="There could be an image" style="width:200px;height:200px;" src="/img/${book.filename} ">
+                            <img class="img-fluid mx-auto d-block"  alt="There could be an image" style="width:200px;height:200px;" src="/img/${book.filename} ">
                         </#if>
                         </td>
                     </tr>
@@ -47,6 +47,6 @@
                 </#list>
                 </tbody>
             </table>
-</div>
+    </div>
 
 </@c.page>

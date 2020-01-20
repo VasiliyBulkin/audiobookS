@@ -8,14 +8,22 @@
         <div class="form-group row">
             <label for="filter" class="col-sm-2 col-form-label">Book name</label>
             <div class="col-sm-10">
-                <input type="text" name="filter" id="filter" class="form-control" placeholder="Book pattern"  value="${filter!''}"/>
+                <input type="text" name="filter" id="filter" class="form-control" placeholder="book pattern"  value="${filter!''}"/>
             </div>
         </div>
 
         <div class="form-group row">
             <label for="filterAuthorName" class="col-sm-2 col-form-label">Author name</label>
             <div class="col-sm-10">
-                <input type="text" name="filterAuthorName" id="filterAuthorName" class="form-control" placeholder="Author pattern"  value="${filterAuthorName!''}"/>
+                <input type="text" name="filterAuthorName" id="filterAuthorName" class="form-control" placeholder="author pattern"  value="${filterAuthorName!''}"/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="genres" class="col-sm-2 col-form-label">Genres</label>
+            <div class="col-sm-10">
+                <input type="text" name="genres" id="genres" class="form-control" placeholder="genres pattern" />
+                       <!--value="${genres!''}"-->
             </div>
         </div>
 
@@ -43,13 +51,13 @@
         </div>
     </form>
 
-<div class="form-row">
-            <table>
-               <thead>
+<div class="table-responsive-md">
+            <table class="table table-hover table-bordered">
+               <thead class="thead-dark">
                    <tr>
                        <th>Name</th>
                        <th>Author</th>
-                       <th>Owner</th>
+                       <th>Genres</th>
                        <th>Cover</th>
                    </tr>
                </thead>
@@ -58,10 +66,10 @@
                           <tr>
                               <td>${book.name!""}</td>
                               <td>${book.authorName!""}</td>
-                              <td>${book.ownerName!""}</td>
+                              <td>${book.genresName!""}</td>
                               <td>
                                   <#if book.filename??> <!-- проверка на наличее поля filename, ??приведение к булеву типу -->
-                                  <img  alt="There could be an image" style="width:200px;height:200px;" src="/img/${book.filename} ">
+                                  <img class="img-fluid mx-auto d-block" alt="There could be an image" style="width:200px;height:200px;" src="/img/${book.filename} ">
                               </#if>
                               </td>
                           </tr>

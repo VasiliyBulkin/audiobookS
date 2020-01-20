@@ -2,14 +2,11 @@ package org.example.audiobookS.domain;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 @Entity //This tells Hibernate to make a table out of this class
 public class Book {
@@ -44,20 +41,27 @@ public class Book {
     private Author author;
 
   //-----------------------------------------------------------------
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(
         name = "book_genre",
         joinColumns = {@JoinColumn (name = "book_id")},
         inverseJoinColumns = {@JoinColumn(name = "genre_id")}
     )
-    private Set<Genre> genreSet = new HashSet<>();
+    private Set<Genre> genres;
 
-    public Set<Genre> getGenreSet() {
-        return genreSet;
+    public Set<Genre> getGenres() {
+        return genres;
     }
 
-    public void setGenreSet(Set<Genre> genreSet) {
-        this.genreSet = genreSet;
+    public  String getGenresName(){
+
+        return !genres.isEmpty()? genres.toString().replaceAll("^\\[|\\]$", ""): "<none>";
+    }
+
+
+
+    public void setGenres(Set<Genre> genres) {
+        this.genres = genres;
     }
 //-------------------------------------------------------------
 
@@ -86,6 +90,16 @@ public class Book {
         this.author = author;
     }
 
+    public Book(@NotNull @Size(
+            min = 1,
+            max = 255,
+            message = "Name is required, maximum 255 characters."
+    ) String name, User owner, Author author, Set<Genre> genres) {
+        this.name = name;
+        this.owner = owner;
+        this.author = author;
+        this.genres = genres;
+    }
 
     //-----------------------------------------------------------------------------------------------
     public String getFilename() {
@@ -157,9 +171,18 @@ public class Book {
         return String.format("Book [id=%s, name=%s, owner=%s, author=%s]", id, name, owner, author);
     }
 
-    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(name, book.name);
+    }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
 }
 
 // genres.stream().map(Genre::getName).collect(Collectors.toList()))

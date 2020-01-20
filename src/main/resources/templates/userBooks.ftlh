@@ -11,13 +11,15 @@
         <button type="submit" class="btn btn-primary ml-2 mb-2">Search</button>
     </form>
 
-        <table >
-            <thead>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
                 <tr>
                     <th>Name</th>
                     <th>Author</th>
+                    <th> Genre</th>
                     <th>Owner</th>
                     <th>Cover</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,11 +27,22 @@
                 <tr>
                     <td>${book.name!""}</td>
                     <td>${book.authorName!""}</td>
+                    <th>
+                        ${book.genresName!""}
+                    </th>
                     <td>${book.ownerName!""}</td>
                     <td>
                         <#if book.filename??> <!-- проверка на наличее поля filename, ??приведение к булеву типу -->
-                        <img  alt="There could be an image" style="width:200px;height:200px;" src="/img/${book.filename!''} ">
-                    </#if>
+                            <img class="img-fluid mx-auto d-block" alt="There could be an image" style="width:150px;height:150px;" src="/img/${book.filename!''} ">
+                        </#if>
+                    </td>
+                    <td>
+                        <!-- <form method="post" action="deleteBook" enctype="multipart/form-data">
+                             <input type="hidden" value="${book.id}" name="bookId">
+                             <input type="hidden" value="${book.authorName}" name="authorName">
+                             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                             <button type="submit">Delete book</button>
+                         </form>-->
                     </td>
                 </tr>
             <#else>

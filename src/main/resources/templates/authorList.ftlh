@@ -75,9 +75,9 @@
     </div>
 </form>
 
-<div class="form-row">
-    <table>
-        <thead>
+
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
             <tr>
                 <th>Author</th>
                 <th>Select an action</th>
@@ -105,5 +105,5 @@
                 </#list>
         </tbody>
     </table>
-</div>
+
 </@c.page>

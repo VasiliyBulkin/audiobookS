@@ -1,10 +1,10 @@
 package org.example.audiobookS.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -25,20 +25,15 @@ public class Genre {
 
     //------------------------------------------
 
-    @ManyToMany
-    @JoinTable(
-            name = "book_genre",
-            joinColumns = {@JoinColumn (name = "genre_id")},
-            inverseJoinColumns = {@JoinColumn(name = "book_id")}
-    )
-    private Set<Book> bookSet= new HashSet<>();
+    @ManyToMany(mappedBy = "genres", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Book> books;
 
-    public Set<Book> getBookSet() {
-        return bookSet;
+    public Set<Book> getBooks() {
+        return books;
     }
 
-    public void setBookSet(Set<Book> bookSet) {
-        this.bookSet = bookSet;
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
   //---------------------------------------------------------------------
 
@@ -57,9 +52,9 @@ public class Genre {
             min = 1,
             max = 255,
             message = "Name is required, maximum 255 characters."
-    ) String name, Set<Book> bookSet) {
+    ) String name, Set<Book> books) {
         this.name = name;
-        this.bookSet = bookSet;
+        this.books = books;
     }
 
     public Long getId() {
@@ -77,4 +72,24 @@ public class Genre {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    @Override
+    public String toString() {
+        return  name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Genre genre = (Genre) o;
+        return Objects.equals(name, genre.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+
 }

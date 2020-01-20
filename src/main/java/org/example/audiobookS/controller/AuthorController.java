@@ -4,6 +4,7 @@ package org.example.audiobookS.controller;
 import org.example.audiobookS.domain.*;
 import org.example.audiobookS.repos.AuthorRepo;
 import org.example.audiobookS.repos.BookRepo;
+import org.example.audiobookS.repos.GenreRepo;
 import org.example.audiobookS.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.validation.ConstraintViolationException;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.*;
 
 @Controller
@@ -27,12 +29,19 @@ public class AuthorController {
     @Autowired
     private AuthorRepo authorRepo;
 
-    @Autowired//this is annotation for injection dependencies in field
+    @Autowired
     private BookRepo bookRepo;
 
     @Autowired
     private UserRepo userRepo;
 
+    @Autowired
+    private GenreRepo genreRepo;
+
+    @Value("${upload.path}")
+    private String uploadPath;
+
+    //---------------------------------------------Prepare view for Storage manager--------------------------------------------
     @GetMapping
     public String authorList(
             @RequestParam(required = false, defaultValue = "") String filterAuthorName,
@@ -53,9 +62,6 @@ public class AuthorController {
            authors = authorRepo.findByAuthornameContaining(filterAuthorName);
            reOrderByAuthorName = "unchecked";
        }
-       // String filterMod = "%"+filterAuthorName +"%";
-       // authors = authorRepo.findByBooksNameLike(filterMod);
-
         model.addAttribute("authors",authors);
         model.addAttribute("filterAuthorName", filterAuthorName);
         model.addAttribute("orderByAuthorName", orderByAuthorName);
@@ -63,29 +69,47 @@ public class AuthorController {
         return "authorList";
     }
 
-    @Value("${upload.path}")
-    private String uploadPath;
-
+    //-----------------------------------------------------Choose author for add new book--------------------------------------
     @GetMapping("{authorid}")
     public  String bookAddForm(@PathVariable String authorid, Model model){
         Iterable <Author> authors;
+        Iterable<Genre> genres;
+
         authors = authorRepo.findAllById(Collections.singleton(Long.parseLong(authorid)));
+
         System.out.println("author = " + authors);
         model.addAttribute("authors", authors);
         return "bookAdd";
     }
 
+    //-----------------------------------------------------Add new book---------------------------------------------
     @PostMapping("{authorid}")
     public String add(
             @AuthenticationPrincipal User owner,
             @RequestParam String name,
             @RequestParam String authorId,
+            @RequestParam (required = false, defaultValue = "undefined") List<String> genrenames,
             Map<String, Object> model,
             @RequestParam("file") MultipartFile file
     ) throws IOException {
+
         Optional<Author> authorById = authorRepo.findById(Long.parseLong(authorId));
         Author author = authorById.get();
-        Book book = new Book(name, owner, author);
+
+        System.out.println("genrenames ============1=================== " + genrenames);
+        Set <Genre> genreSet = new HashSet<>();
+
+        for (String str :
+                genrenames ) {
+            Genre genre = genreRepo.findByName(str);
+                if(genre == null){
+                    genre = new Genre(str);
+                }
+                genreSet.add(genre);
+            System.out.println("genre ===================2================== " + genre);
+        }
+
+        Book book = new Book(name, owner, author, genreSet);
         if (file != null && !file.getOriginalFilename().isEmpty()) {//проверяем есть ли файл не равный null
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists()) {//если директория не существует - создаем ее
@@ -97,41 +121,20 @@ public class AuthorController {
             book.setFilename(resultFilename);
         }
 
+        System.out.println("owner ========= " + owner.getBooks().size());
+        System.out.println("book = " + book.getGenres());
+        System.out.println("author = " + author.getBooks());
+        System.out.println("genreSet =------------------- " + genreSet);
+
+
         owner.getBooks().add(book);
         //userRepo.save(owner);
         bookRepo.save(book);
         String authorName = author.getAuthorname();
         return "redirect:/book/" + authorName;
-
-      //  Set<Book> books= author.getBooks();
-      //  books.add(book);
-       // Genre myGenre = new Genre(genre);
-       // myGenre.addBook(book);
-       // bookRepo.deleteById();
-       // String[] mSomeGenres = { "detective", "horror", "genre" };
-      //  Set<Genre> genres = new HashSet<>();
-      //  for (String g : mSomeGenres){
-       //     genres.add(new Genre());
-      //  }
-   /*
-        Set<Genre> genres = new HashSet<>();
-        for (String g : mSomeGenres){
-            genres.add(new Genre(g));
-        }
-//user_id bigint,
-        for(Genre myGenre: genres){
-            myGenre.addBook(book);
-        }
-*/
-       // book.setGenres(genres);
-
-       // Iterable<Book> books = authorById.get().getBooks();
-        //model.put("books", books);
-       // model.put("authorId", authorId);
-
-        //return "bookList";
-       // return "redirect:/author";
     }
+
+    //-----------------------------------------------------Delete author---------------------------------------------
 
     @GetMapping("delete/{authorid}")
     public String deleteAuthor(
@@ -153,6 +156,7 @@ public class AuthorController {
             return "authorList";
     }
 
+//------------------------------------------------------Add new author ---------------------------------------
     @GetMapping("/add")
     public  String authorSave(
             @RequestParam String authorname,
@@ -184,5 +188,5 @@ public class AuthorController {
         public  String genericRollbackException(){
         return "genericRollbackException";
     }
-
+//---------------------------------------------------The End---------------------------------------
 }
