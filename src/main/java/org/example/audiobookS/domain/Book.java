@@ -168,7 +168,7 @@ public class Book {
     //----------------------------------------------------------------------------------------------------
     @Override
     public String toString() {
-        return String.format("Book [id=%s, name=%s, owner=%s, author=%s]", id, name, owner, author);
+        return String.format(name);
     }
 
     @Override

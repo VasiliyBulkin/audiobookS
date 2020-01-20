@@ -20,30 +20,37 @@
         </div>
 
         <div class="form-group row">
-            <label for="genres" class="col-sm-2 col-form-label">Genres</label>
+            <label for="filterGenres" class="col-sm-2 col-form-label">Genres</label>
             <div class="col-sm-10">
-                <input type="text" name="genres" id="genres" class="form-control" placeholder="genres pattern" />
-                       <!--value="${genres!''}"-->
+                <input type="text" name="filterGenres" id="filterGenres" class="form-control" placeholder="genres pattern" value="${filterGenres!''}"/>
             </div>
         </div>
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Order by</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio"  name="orderBy" id="orderByBookName" value="Name" />
+                        <label class="form-check-label" for="orderByBookName">
+                            Book
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="orderBy" id="orderByAuthorName"  value="Author" />
+                        <label class="form-check-label" for= "orderByAuthorName">
+                            Author
+                        </label>
+                    </div>
+                    <div class="form-check disabled">
+                        <input class="form-check-input" type="radio" name="orderBy" id="gridRadios3" value="Genre"/>
+                        <label class="form-check-label" for="gridRadios3">
+                            Genre
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
 
-        <div class="form-group row">
-            <div class="col-sm-2">Order by</div>
-            <div class="col-sm-10">
-                <div class="form-check">
-                    <input type="checkbox" name="orderByBookName" id="orderByBookName" class="form-check-input" value="checked" ${orderByBookName!''}/>
-                    <label for="orderByBookName" class="form-check-label">
-                        Book
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="orderByAuthorName" id="orderByAuthorName" class="form-check-input" value="checked" ${orderByAuthorName!''}/>
-                    <label for="orderByAuthorName"class="form-check-label" >
-                        Author
-                </label>
-                </div>
-            </div>
-        </div>
         <div class="form-group row">
             <div class="col-sm-10">
                 <button type="submit" class="btn btn-primary">Search</button>

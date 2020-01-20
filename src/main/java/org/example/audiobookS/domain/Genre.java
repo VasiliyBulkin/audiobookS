@@ -35,6 +35,11 @@ public class Genre {
     public void setBooks(Set<Book> books) {
         this.books = books;
     }
+
+    public  String getBooksName(){
+
+        return !books.isEmpty()? books.toString().replaceAll("^\\[|\\]$", ""): "<none>";
+    }
   //---------------------------------------------------------------------
 
     public Genre() {
