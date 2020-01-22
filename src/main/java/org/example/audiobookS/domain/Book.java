@@ -1,17 +1,16 @@
 package org.example.audiobookS.domain;
 
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity //This tells Hibernate to make a table out of this class
 public class Book {
+
     @Id //This is the identification field
-    @GeneratedValue(strategy = GenerationType.AUTO)//This is field generated automatically
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//This is field generated automatically
     private Long id;
 
     @NotNull
@@ -21,31 +20,27 @@ public class Book {
             message = "Name is required, maximum 255 characters."
     )
     private String name; //first name and last name of author with space
-//-----------------------------------------------------------------------
-    /*@ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    private User owner;*/
+//------------------------------------------------------------------------------------
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_id",
-            joinColumns = {@JoinColumn (name = "book_id")},
+            joinColumns = {@JoinColumn(name = "book_id")},
             inverseJoinColumns = {@JoinColumn(nullable = false)}
     )
     private User owner;
+    //---------------------------------------------------------------------------
 
-
-//---------------------------------------------------------------------------
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 
-  //-----------------------------------------------------------------
+    //-----------------------------------------------------------------
     @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(
-        name = "book_genre",
-        joinColumns = {@JoinColumn (name = "book_id")},
-        inverseJoinColumns = {@JoinColumn(name = "genre_id")}
+            name = "book_genre",
+            joinColumns = {@JoinColumn(name = "book_id")},
+            inverseJoinColumns = {@JoinColumn(name = "genre_id")}
     )
     private Set<Genre> genres;
 
@@ -53,20 +48,17 @@ public class Book {
         return genres;
     }
 
-    public  String getGenresName(){
-
-        return !genres.isEmpty()? genres.toString().replaceAll("^\\[|\\]$", ""): "<none>";
-    }
-
-
-
     public void setGenres(Set<Genre> genres) {
         this.genres = genres;
+    }
+    public String getGenresName() {
+
+        return !genres.isEmpty() ? genres.toString().replaceAll("^\\[|\\]$", "") : "<none>";
     }
 //-------------------------------------------------------------
 
     private String filename;
-
+//--------------------------------------------------------------
     public Book() {
     }
 
@@ -111,8 +103,8 @@ public class Book {
     }
 
     //-----------------------------------------------------------------------------------------------
-    public  String getOwnerName(){
-      return owner !=null ? owner.getUsername(): "<none>";
+    public String getOwnerName() {
+        return owner != null ? owner.getUsername() : "<none>";
     }
 
     public User getOwner() {
@@ -141,6 +133,7 @@ public class Book {
     public void setName(String name) {
         this.name = name;
     }
+
     //-----------------------------------------------------------------------------------------------
     public Author getAuthor() {
         return author;
@@ -150,11 +143,11 @@ public class Book {
         this.author = author;
     }
 
-    public  String getAuthorName(){
-       return author !=null ? author.getAuthorname(): "<none>";
+    public String getAuthorName() {
+        return author != null ? author.getAuthorname() : "<none>";
     }
-    //-------------------------------------------------------------------------------------------------
 
+    //-------------------------------------------------------------------------------------------------
 
     public Book(@NotNull @Size(
             min = 1,

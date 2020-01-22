@@ -22,16 +22,17 @@
                 <a class="nav-link" href="/search">Advanced Search</a>
             </li>
 
+            <#if isAdmin>
             <li class="nav-item">
                 <a class="nav-link" href="/user-owner/${currentUserId}">My books</a>
             </li>
+            </#if>
 
             <#if isAdmin>
             <li class="nav-item">
                 <a class="nav-link" href="/author">Storage management</a>
             </li>
             </#if>
-
 
             <#if isAdmin>
             <li class="nav-item">

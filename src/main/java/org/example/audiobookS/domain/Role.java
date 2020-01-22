@@ -12,7 +12,7 @@ public enum Role implements GrantedAuthority {
     }
 
     @GetMapping
-    public String userList(){
+    public String userList() {
         return "userList";
     }
 }

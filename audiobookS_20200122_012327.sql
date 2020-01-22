@@ -46,23 +46,6 @@ ENGINE = InnoDB;
 -- -------------------------------------------------------------
 
 
--- CREATE TABLE "flyway_schema_history" ------------------------
-CREATE TABLE `flyway_schema_history` ( 
-	`installed_rank` Int( 11 ) NOT NULL,
-	`version` VarChar( 50 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
-	`description` VarChar( 200 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-	`type` VarChar( 20 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-	`script` VarChar( 1000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-	`checksum` Int( 11 ) NULL,
-	`installed_by` VarChar( 100 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-	`installed_on` Timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	`execution_time` Int( 11 ) NOT NULL,
-	`success` TinyInt( 1 ) NOT NULL,
-	PRIMARY KEY ( `installed_rank` ) )
-CHARACTER SET = utf8
-COLLATE = utf8_general_ci
-ENGINE = InnoDB;
--- -------------------------------------------------------------
 
 
 -- CREATE TABLE "genre" ----------------------------------------

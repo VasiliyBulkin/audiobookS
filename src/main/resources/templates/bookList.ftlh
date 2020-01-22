@@ -4,7 +4,6 @@
 <#if author.id??>
       <p><a href="/author/${author.id!''}">Add another  book by ${author.authorname!''}</a></p>
 </#if>
-
 <div>
     <table class="table table-hover table-bordered">
         <thead class="thead-dark">
@@ -14,7 +13,6 @@
             <th> Genre</th>
             <th> Owner</th>
             <th> Cover</th>
-
         </tr>
         </thead>
         <tbody>
@@ -31,8 +29,6 @@
                                 <img class="img-fluid mx-auto d-block" style="width:150px;height:150px;" src="/img/${book.filename}">
                             </#if>
                             </td>
-
-
                         </tr>
                     <#else>
                     No books

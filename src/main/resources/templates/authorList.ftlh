@@ -1,7 +1,6 @@
 <#import "parts/common.ftlh" as c>
 <@c.page>
 
-
 <#if messageOK??>
     <div class="alert alert-success" role="alert">
         ${messageOK!''}
@@ -19,21 +18,19 @@
         ${messageDenied!''}
     </div>
 </#if>
-<#if messageSuccess??>
-<div class="alert alert-success" role="alert">
-    ${messageSuccess!''}
-</div>
-</#if>
 
+<#if messageSuccess??>
+    <div class="alert alert-success" role="alert">
+        ${messageSuccess!''}
+    </div>
+</#if>
 
 <form  action="/author/add" method="get">
     <div class="form-group row">
         <label for="authorname" class="col-sm-2 col-form-label"> Add new author </label>
-
         <div class="col-sm-10">
             <input type="text" name="authorname" id="authorname" class="form-control"  placeholder="Input author name"   <#if messageNotOk??>value="${authorname!''}" </#if>>
         </div>
-
     </div>
     <div class="form-group row">
         <div class="col-sm-10">
@@ -75,7 +72,6 @@
     </div>
 </form>
 
-
     <table class="table table-hover table-bordered">
         <thead class="thead-dark">
             <tr>
@@ -105,5 +101,4 @@
                 </#list>
         </tbody>
     </table>
-
 </@c.page>

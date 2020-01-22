@@ -1,8 +1,8 @@
 <#import "parts/common.ftlh" as c>
 
 <@c.page>
-<div>
+<div class="alert alert-warning" role="alert">
   This Id does not exist
 </div>
-<a href="/main">Main page</a>
+
 </@c.page>

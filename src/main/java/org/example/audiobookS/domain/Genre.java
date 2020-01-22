@@ -3,7 +3,6 @@ package org.example.audiobookS.domain;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -11,7 +10,7 @@ import java.util.Set;
 public class Genre {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
@@ -23,7 +22,7 @@ public class Genre {
     private String name;
 
 
-    //------------------------------------------
+    //------------------------------------------------------------------------------------
 
     @ManyToMany(mappedBy = "genres", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Book> books;
@@ -36,11 +35,11 @@ public class Genre {
         this.books = books;
     }
 
-    public  String getBooksName(){
+    public String getBooksName() {
 
-        return !books.isEmpty()? books.toString().replaceAll("^\\[|\\]$", ""): "<none>";
+        return !books.isEmpty() ? books.toString().replaceAll("^\\[|\\]$", "") : "<none>";
     }
-  //---------------------------------------------------------------------
+    //---------------------------------------------------------------------
 
     public Genre() {
     }
@@ -81,7 +80,7 @@ public class Genre {
 
     @Override
     public String toString() {
-        return  name;
+        return name;
     }
 
     @Override
@@ -96,5 +95,4 @@ public class Genre {
     public int hashCode() {
         return Objects.hash(name);
     }
-
 }

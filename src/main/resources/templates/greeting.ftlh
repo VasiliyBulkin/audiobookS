@@ -1,8 +1,9 @@
 <#import "parts/common.ftlh" as c>
 
 <@c.page>
-<h5>
+<h3>
     Hello, guest!
-</h5>
-<div>This is audiobook storage</div>
+    <small class="text-muted">This is audiobook storage</small>
+</h3>
+
 </@c.page>

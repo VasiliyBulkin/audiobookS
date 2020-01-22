@@ -94,6 +94,5 @@
                  </tbody>
                 </#list>
             </table>
-
 </div>
 </@c.page>

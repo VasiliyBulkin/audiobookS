@@ -1,6 +1,6 @@
 <#import "parts/common.ftlh" as c>
-<@c.page>
 
+<@c.page>
             <form method="get" action="/main" class="form-inline">
                     <label class="sr-only" for="filter">Book</label>
                     <input type="text" name="filter" id="filter" class="form-control mb-2 mr-sm-2" placeholder="Book name"  value="${filter!''}"/>
@@ -40,8 +40,7 @@
                         </td>
                         <td></td>
                         <td></td>
-                        <td>
-                        </td>
+                        <td></td>
                     </tr>
 
                 </#list>

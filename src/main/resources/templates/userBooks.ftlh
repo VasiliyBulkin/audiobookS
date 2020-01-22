@@ -36,14 +36,7 @@
                             <img class="img-fluid mx-auto d-block" alt="There could be an image" style="width:150px;height:150px;" src="/img/${book.filename!''} ">
                         </#if>
                     </td>
-                    <td>
-                        <!-- <form method="post" action="deleteBook" enctype="multipart/form-data">
-                             <input type="hidden" value="${book.id}" name="bookId">
-                             <input type="hidden" value="${book.authorName}" name="authorName">
-                             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                             <button type="submit">Delete book</button>
-                         </form>-->
-                    </td>
+                    <td></td>
                 </tr>
             <#else>
                     <tr>
@@ -54,8 +47,7 @@
                         </td>
                         <td></td>
                         <td></td>
-                        <td>
-                        </td>
+                        <td></td>
                     </tr>
             </#list>
             </tbody>

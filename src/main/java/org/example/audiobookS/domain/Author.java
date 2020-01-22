@@ -1,9 +1,6 @@
 package org.example.audiobookS.domain;
 
-
-
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Set;
@@ -11,9 +8,8 @@ import java.util.Set;
 @Entity
 public class Author {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
 
     @NotNull
     @Size(
@@ -21,9 +17,9 @@ public class Author {
             max = 255,
             message = "Name is required, minimum 2,  maximum 255 characters."
     )
-
     private String authorname;
-//-------------------------------------------------------------------------
+
+    //-------------------------------------------------------------------------
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private Set<Book> books;
 
@@ -34,7 +30,8 @@ public class Author {
     public void setBooks(Set<Book> books) {
         this.books = books;
     }
-//---------------------------------------------------------------------------------
+
+    //---------------------------------------------------------------------------------
     public Author() {
     }
 
@@ -46,7 +43,7 @@ public class Author {
         this.id = id;
         this.authorname = authorname;
     }
-
+    //------------------------------------------------------------------------
     public Long getId() {
         return id;
     }

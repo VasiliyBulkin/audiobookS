@@ -224,9 +224,7 @@
     <input type="hidden" value="${author.id}" name="authorId">
     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
 </form>
-
 </#list>
-
 </@c.page>
 
 

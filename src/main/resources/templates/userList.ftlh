@@ -1,10 +1,9 @@
 <#import "parts/common.ftlh" as c>
 
 <@c.page>
-<p><span><a href="/main">Main page</a></span></p>
-<p><span><a href="/author">Storage management</a></span></p>
-<table>
-    <thead>
+
+<table class="table table-hover table-bordered">
+    <thead class="thead-dark">
         <tr>
             <th>Name</th>
             <th>Role</th>
